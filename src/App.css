@@ -1,41 +1,4 @@
 /* Global Styling */
-/* Add your CSS animation styles */
-@keyframes move {
-  0% {
-      transform: translateX(0); /* Initial position */
-  }
-  50% {
-      transform: translateX(20px); /* Move 20px to the right */
-  }
-  100% {
-      transform: translateX(0); /* Move back to the original position */
-  }
-}
-
-@keyframes colorChange {
-  0% {
-      color: #333; /* Start with a dark color */
-  }
-  25% {
-      color: #f39c12; /* Change to orange */
-  }
-  50% {
-      color: #3498db; /* Change to blue */
-  }
-  75% {
-      color: #9b59b6; /* Change to purple */
-  }
-  100% {
-      color: #333; /* Back to the original color */
-  }
-}
-
-/* Apply both the movement and color-changing animation to the heading */
-.hero-content h1 {
-  animation: move 3s infinite ease-in-out, colorChange 5s infinite ease-in-out; /* Combine both animations */
-  font-size: 3rem; /* Adjust font size if needed */
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -47,9 +10,47 @@ body {
   background-color: #d6a6a6;
 }
 
+/* Add your CSS animation styles */
+@keyframes move {
+  0% {
+    transform: translateX(0); /* Initial position */
+  }
+  50% {
+    transform: translateX(20px); /* Move 20px to the right */
+  }
+  100% {
+    transform: translateX(0); /* Move back to the original position */
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    color: #333; /* Start with a dark color */
+  }
+  25% {
+    color: #f39c12; /* Change to orange */
+  }
+  50% {
+    color: #3498db; /* Change to blue */
+  }
+  75% {
+    color: #9b59b6; /* Change to purple */
+  }
+  100% {
+    color: #333; /* Back to the original color */
+  }
+}
+
+/* Apply both the movement and color-changing animation to the heading */
+.hero-content h1 {
+  animation: move 3s infinite ease-in-out, colorChange 5s infinite ease-in-out;
+  font-size: 2.5rem; /* Adjust font size for better scaling */
+}
+
 /* Navbar */
 .navbar {
   display: flex;
+  flex-wrap: wrap; /* Allow items to wrap on small screens */
   justify-content: space-between;
   align-items: center;
   padding: 20px;
@@ -76,7 +77,7 @@ body {
 
 .auth-buttons .login-btn, .signup-btn {
   margin-left: 10px;
-  padding: 10px 20px;
+  padding: 10px 15px;
   border: none;
   cursor: pointer;
 }
@@ -89,15 +90,12 @@ body {
 /* Hero Section */
 .hero-section {
   display: flex;
+  flex-direction: column; /* Stack content vertically on small screens */
   align-items: center;
-  justify-content: space-between;
-  padding: 50px;
+  justify-content: center;
+  padding: 50px 20px;
   background-color: #f4f4f4;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
+  text-align: center; /* Center align text */
 }
 
 .hero-buttons {
@@ -122,17 +120,45 @@ body {
 }
 
 /* Interactive T-shirt Section */
+.interactive-section {
+  display: flex;
+  flex-direction: column; /* Stack on small screens */
+  align-items: center;
+}
+
 .tshirt-section img {
-  width: 200px;
-  height: 200px;
-  transition: opacity 0.5s ease-in-out; /* Add transition for smooth fade */
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .girl-section img {
-  width: 100px;
-  height: 200px;
+  width: 100%;
+  max-width: 100px;
+  height: auto;
   cursor: pointer;
-  float: right;
-  position: relative;
-  top: -20px;
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+  /* Adjust hero section for larger screens */
+  .hero-section {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .tshirt-section,
+  .girl-section {
+    flex: 1;
+  }
+
+  .girl-section {
+    text-align: right;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem; /* Larger font on bigger screens */
+  }
 }
