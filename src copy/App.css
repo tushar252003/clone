@@ -1,0 +1,101 @@
+/* Global Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #d6a6a6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(226, 158, 158);
+}
+
+.logo img {
+  height: 40px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+}
+
+.auth-buttons .login-btn, .signup-btn {
+  margin-left: 10px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.signup-btn {
+  background-color: #81dbeb;
+  color: white;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  background-color: #f4f4f4;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-buttons {
+  margin-top: 20px;
+}
+
+.start-btn, .info-btn {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.start-btn {
+  background-color: #21e46b;
+  color: white;
+}
+
+.info-btn {
+  background-color: white;
+  border: 1px solid #2c50b4;
+}
+
+/* Interactive T-shirt Section */
+.tshirt-section img {
+  width: 200px;
+  height: 200px;
+  transition: opacity 0.5s ease-in-out; /* Add transition for smooth fade */
+}
+
+.girl-section img {
+  width: 100px;
+  height: 200px;
+  cursor: pointer;
+  float: right;
+  position: relative;
+  top: -20px;
+}
